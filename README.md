@@ -1,0 +1,271 @@
+<!-- Maths Made Easy - Single-file website
+     Instructions:
+     1) Replace the PROFILE_IMG and LOGO_IMG placeholders with your image files (e.g. profile.jpg, logo.png) in the same folder.
+     2) Save this file as index.html and push to a GitHub repo. Enable GitHub Pages (Settings → Pages → select branch). The site will be live at https://<your-username>.github.io/<repo-name>/
+     3) To accept enrollments, update the mailto or connect a real form endpoint (Formspree, Getform, etc.).
+-->
+
+<!-- GitHub-Ready Repo Structure
+
+Recommended folder layout:
+
+my-tutoring-site/
+│
+├── index.html        # Main website (this file)
+├── assets/
+│   ├── profile.jpg   # Your profile picture
+│   ├── logo.png      # Your logo image
+│   └── whatsapp.svg  # Whatsapp icon (optional)
+└── README.md         # Instructions for GitHub Pages deployment
+
+Steps to deploy on GitHub:
+1. Create a new repo on GitHub (public recommended).
+2. Upload index.html and create an /assets folder with your images.
+3. Go to Settings → Pages → Select "main" branch → Select / (root) → Save.
+4. Your site becomes live at: https://<username>.github.io/<repo-name>/
+
+Below is your GitHub-optimized index.html file.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Maths Made Easy — Personal Maths Coaching</title>
+  <meta name="description" content="Maths Made Easy - personalised coaching for classes 4-10. Book a free demo. Live worksheets, doubt support and result-driven teaching.">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071026 0%, #0b1220 100%);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1100px;margin:28px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:50%;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,.6);border:3px solid rgba(255,255,255,.04)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{font-size:26px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:24px;border-radius:16px;box-shadow:0 8px 30px rgba(2,6,23,.7);border:1px solid rgba(255,255,255,0.03)}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#34d399);color:#042027}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* right panel */
+    .stats{display:flex;flex-direction:column;gap:12px}
+    .stat{display:flex;align-items:center;gap:12px}
+    .avatar{width:88px;height:88px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.04)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    /* Courses */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .course{padding:16px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
+    .price{font-weight:700;margin-top:12px}
+
+    /* Demo cards */
+    .demos{display:flex;gap:12px;margin-top:18px}
+    .demo{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);min-height:120px}
+
+    /* Pricing */
+    .pricing{display:flex;gap:14px;margin-top:18px}
+    .plan{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+
+    footer{margin-top:36px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Contact form */
+    form{display:grid;gap:10px}
+    input,select,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .muted{color:var(--muted);font-size:13px}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(2,6,23,.6);cursor:pointer}
+    .whatsapp img{width:28px;height:28px}
+
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.pricing{flex-direction:column}.wrap{padding:16px}}
+    @media (max-width:560px){.grid{grid-template-columns:1fr}.brand h1{font-size:18px}}
+
+    /* small animations */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .7s ease forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="LOGO_IMG" alt="Maths Made Easy logo"></div>
+        <div>
+          <h1>Maths Made Easy</h1>
+          <p class="lead">Personalised Maths coaching • Classes 4–10 • Book a free demo</p>
+        </div>
+      </div>
+      <nav>
+        <button class="btn btn-ghost" onclick="scrollToSection('courses')">Courses</button>
+        <button class="btn btn-ghost" onclick="scrollToSection('demo')">Demo</button>
+        <button class="btn btn-primary" onclick="scrollToSection('contact')">Book Demo</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card fade-up">
+          <h2 style="margin:0 0 6px">Struggling with Maths? We make it simple.</h2>
+          <p class="muted">One-on-one and small group classes, concept-first lessons, regular worksheets and doubt hours. Build confidence and scores — fast.</p>
+          <div class="cta">
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Book a Free 20-min Demo</button>
+            <a class="btn btn-ghost" href="mailto:your-email@example.com?subject=Demo%20Request">Request Call</a>
+          </div>
+
+          <div class="demos">
+            <div class="demo">
+              <h4 style="margin:6px 0">Sample Lesson</h4>
+              <p class="muted">Short video or audio explaining a core concept (replace with your video).</p>
+            </div>
+            <div class="demo">
+              <h4 style="margin:6px 0">Worksheets</h4>
+              <p class="muted">Upload free worksheet PDFs to show value and capture leads.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:18px">
+            <h4 style="margin:6px 0">Why parents choose us</h4>
+            <ul class="muted">
+              <li>Clear concept-first teaching</li>
+              <li>Weekly tests & personalized feedback</li>
+              <li>Affordable monthly plans</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="card stats fade-up" style="align-self:start">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="avatar"><img src="PROFILE_IMG" alt="Malik profile"></div>
+            <div>
+              <strong>Malik — Maths Tutor</strong>
+              <p class="muted" style="margin:6px 0 0">Experienced teacher • Patient, result-focused approach</p>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="stat"><strong>✔</strong><div style="margin-left:8px" class="muted">1-on-1 & small group classes</div></div>
+            <div class="stat"><strong>✔</strong><div style="margin-left:8px" class="muted">Worksheets & doubt support</div></div>
+            <div class="stat"><strong>✔</strong><div style="margin-left:8px" class="muted">Flexible schedules</div></div>
+          </div>
+
+          <div style="margin-top:14px">
+            <small class="muted">Trusted by students across the city. Results-driven coaching.</small>
+          </div>
+        </aside>
+      </section>
+
+      <section id="courses" class="card fade-up" style="margin-top:18px">
+        <h3 style="margin-top:0">Courses & Pricing</h3>
+        <div class="grid">
+          <div class="course">
+            <h4>Foundation — Class 4–5</h4>
+            <p class="muted">Basics & number sense. 1 session/week + worksheets.</p>
+            <div class="price">₹1,500 / month</div>
+          </div>
+          <div class="course">
+            <h4>Concept Builder — Class 6–8</h4>
+            <p class="muted">Core concepts, problem solving. 2 sessions/week + tests.</p>
+            <div class="price">₹3,000 / month</div>
+          </div>
+          <div class="course">
+            <h4>Exam Booster — Class 9–10</h4>
+            <p class="muted">Board prep, past papers, timed mocks.</p>
+            <div class="price">₹4,500 / month</div>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <div class="plan">
+            <h4>Trial Pack</h4>
+            <p class="muted">One free 20-min demo + first worksheet</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Book Demo</button>
+          </div>
+          <div class="plan">
+            <h4>Monthly Plan</h4>
+            <p class="muted">Flexible cancellation, weekly tests, priority doubt support.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Enroll Now</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="card fade-up" style="margin-top:18px">
+        <h3 style="margin-top:0">Demo Lessons & Resources</h3>
+        <p class="muted">Embed short YouTube videos or upload lesson clips. Below are placeholder links — replace with your videos or PDFs.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="card" style="flex:1;min-width:220px;text-decoration:none;color:inherit">Demo Lesson: Fractions (video)</a>
+          <a class="card" style="flex:1;min-width:220px;text-decoration:none;color:inherit">Worksheet: Multiplication (PDF)</a>
+        </div>
+      </section>
+
+      <section id="contact" class="card fade-up" style="margin-top:18px">
+        <h3 style="margin-top:0">Contact & Enrollment</h3>
+        <p class="muted">Fill the quick form and I'll get back on WhatsApp within a few hours.</p>
+        <form onsubmit="handleForm(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input required placeholder="Student Name" id="name">
+            <input required placeholder="Parent Phone (WhatsApp)" id="phone">
+          </div>
+          <input placeholder="Class (e.g. 8)" id="class">
+          <select id="plan">
+            <option>Trial — Free demo</option>
+            <option>Foundation (4–5)</option>
+            <option>Concept Builder (6–8)</option>
+            <option>Exam Booster (9–10)</option>
+          </select>
+          <textarea id="message" placeholder="Any additional info (optional)" rows="3"></textarea>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn btn-primary" type="submit">Send Request</button>
+            <a class="btn btn-ghost" href="tel:+91XXXXXXXXXX">Call/WhatsApp</a>
+          </div>
+        </form>
+
+        <div style="margin-top:12px" class="muted">Or message directly on WhatsApp using the green button at bottom-right.</div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Maths Made Easy — Malik</div>
+      <div class="muted">Built with ❤️ • Ready to host on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <div class="whatsapp" title="Message on WhatsApp" onclick="openWhatsApp()">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M20.52 3.48A11.89 11.89 0 0012 .5C6.76.5 2.08 4.96 1.18 10.84c-.3 1.87.14 3.93 1.22 5.6L.5 23.5l7.4-2.12a11.88 11.88 0 005.9 1.5c5.24 0 9.92-4.46 10.82-10.34.54-3.21-.2-6.44-2.1-8.56zM12 20a8 8 0 01-4.12-1.12l-.3-.18L5 19l.66-2.5-.2-.32A7.8 7.8 0 014 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z'/></svg>" alt="whatsapp">
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function scrollToSection(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+    function openWhatsApp(){
+      const phone = '+91XXXXXXXXXX'; // Replace with your WhatsApp number (international format)
+      const text = encodeURIComponent('Hello Malik, I would like to book a demo for Maths classes.');
+      window.open('https://wa.me/' + phone.replace(/\D/g,'') + '?text=' + text,'_blank')
+    }
+
+    function handleForm(e){
+      e.preventDefault();
+      const data = {
+        name:document.getElementById('name').value,
+        phone:document.getElementById('phone').value,
+        cls:document.getElementById('class').value,
+        plan:document.getElementById('plan').value,
+        message:document.getElementById('message').value
+      };
+      // Basic client-side action: open mailto with prefilled content. Replace with Formspree/Getform for real capture.
+      const subject = encodeURIComponent('Demo Request from ' + data.name + ' (' + data.cls + ')');
+      const body = encodeURIComponent('Name: '+data.name+'\nPhone: '+data.phone+'\nClass: '+data.cls+'\nPlan: '+data.plan+'\nMessage: '+data.message);
+      window.location.href = 'mailto:your-email@example.com?subject='+subject+'&body='+body;
+    }
+  </script>
+</body>
+</html>
